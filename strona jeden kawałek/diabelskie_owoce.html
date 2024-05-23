@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabelskie Owoce w One Piece</title>
+    <link rel="stylesheet" href="styleowoc.css">
+</head>
+<body>
+    <header>
+        <h1>Diabelskie Owoce w One Piece</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Powrót</a></li>
+            <li><a href="haki.html">Haki</a></li>
+            <li><a href="postacie.html">Postacie</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="diabelskie-owoce">
+            <div class="container">
+                <h2>Diabelskie Owoce</h2>
+                <p>Mistyczne owoce rozsiane po całym świecie, które po zjedzeniu, 
+                dają specjalną umiejętność zależną od typu owocu. Prócz pewnego wyjątku, jedna osoba może posiadać moc tylko jednego diabelskiego owocu.
+                </p>
+                
+                <div id="owoc-lista">
+                    <h3>Lista diabelskich owoców:</h3>
+                    <ul>
+                        <li>
+                            <span class="fruit-name">Owoc Gomu Gomu (Gum-Gum Fruit)</span>
+                            <img src="Gomu_Gomu_no_Mi.png" alt="gomu gomu">
+                        </li>
+                        <li>
+                            <span class="fruit-name">Owoc Mera Mera (Flame-Flame Fruit)</span>
+                            <img src="Mera_Mera_no_Mi.png" alt="mera mera">
+                        </li>
+                        <li>
+                            <span class="fruit-name">Owoc Ope Ope (Op-Op Fruit)</span>
+                            <img src="Ope_Ope_no_Mi.png" alt="ope ope">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="gify">
+        <h1>Umiejętność</h1>
+        <ul>
+            <li>
+                <img src="luffy-rubber-man.gif" alt="gif1">
+                <div class="user-info">Użytkownik: Luffy<br>Umiejętność: Gumowe ciało</div>
+            </li>
+            <li>
+                <img src="hiken-mera-mera-no-mi.gif" alt="gif2">
+                <div class="user-info">Użytkownik: Ace<br>Umiejętność: Kontrola ognia</div>
+            </li>
+            <li>
+                <img src="traflager-law.gif" alt="gif3">
+                <div class="user-info">Użytkownik: Law<br>Umiejętność: Manipulacja przestrzenią</div>
+            </li>
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var images = document.querySelectorAll('#owoc-lista img, #gify img');
+            for (var i = 0; i < images.length; i++) {
+                images[i].addEventListener('click', function() {
+                    var fruitName = this.getAttribute('alt');
+                    if (fruitName === 'gomu gomu') {
+                        window.location.href = 'https://www.youtube.com/watch?v=ix3oPO286NU';
+                    } else if (fruitName === 'mera mera') {
+                        window.location.href = 'https://www.youtube.com/watch?v=bs4_qmLPyUY';
+                    } else if (fruitName === 'ope ope') {
+                        window.location.href = 'https://www.youtube.com/watch?v=_kgt5-awhlQ';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

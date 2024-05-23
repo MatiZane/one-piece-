@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Strona powitalna</title>
+    <link rel="stylesheet" href="styleindex.css">
+</head>
+<body>
+    <h1>Witaj na stronie poświęconej One Piece!</h1>
+    <p>Wybierz jedną z poniższych opcji:</p>
+    <img src="luffy g5.png" alt="luffy" id="luffy-image">
+    <ul>
+        <li><a href="diabelskie_owoce.html">Diabelskie Owoce</a></li>
+        <li><a href="haki.html">Haki</a></li>
+        <li><a href="postacie.html">Postacie</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+    </ul>
+    
+    <div class="login-form">
+        <h2>Zaloguj się</h2>
+        <form>
+            <label for="username">Nazwa użytkownika:</label>
+            <input type="text" id="username" name="username" required>
+            
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Zaloguj</button>
+        </form>
+        <div class="signup-link">
+            <span>Nie masz jeszcze konta?</span>
+            <a href="#">Zarejestruj się teraz</a>
+        </div>
+    </div>
+    
+    <div class="sponsors">
+        <h2>twórca strony</h2>
+        <ul>
+            <li><a href="https://github.com/MatiZane" target="_blank"><img src="sponsor1.jpg" alt="Mateusz Korzeniecki"></a></li>
+        </ul>
+    </div>
+
+    <script>
+        const signupLink = document.querySelector(".signup-link a");
+        const loginForm = document.querySelector(".login-form");
+        const signupForm = document.createElement("div");
+        signupForm.className = "signup-form";
+        signupForm.innerHTML = `
+            <h2>Zarejestruj się</h2>
+            <form action="index.php" method="post">
+                <label for="signup-username">Nazwa użytkownika:</label>
+                <input type="text" id="signup-username" name="signup_username" required>
+                
+                <label for="signup-email">E mail:</label>
+                <input type="email" id="signup-email" name="signup_email" required>
+        
+                <label for="signup-password">Hasło:</label>
+                <input type="password" id="signup-password" name="signup_password" required>
+                
+                <button type="submit">Zarejestruj</button>
+            </form>
+            <div class="login-link">
+                <span>Posiadasz już konto na naszej Stronie?</span>
+                <a href="#">Zaloguj się</a>
+            </div>
+        `;
+        signupLink.addEventListener("click", () => {
+            loginForm.parentNode.replaceChild(signupForm, loginForm);
+        });
+        
+        const loginLink = signupForm.querySelector(".login-link a");
+        loginLink.addEventListener("click", () => {
+            signupForm.parentNode.replaceChild(loginForm, signupForm);
+        });
+    </script>
+
+    <?php
+    $servername = "localhost";
+    $username = "root";
+    $password = ""; 
+    $dbname = "one_piece_users";
+
+    $conn = mysqli_connect($servername, $username, $password, $dbname);
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['signup_username'])) {
+        $signup_username = $_POST['signup_username'];
+        $signup_email = $_POST['signup_email'];
+        $signup_password = password_hash($_POST['signup_password'], PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO users (username, email, password) VALUES ('$signup_username', '$signup_email', '$signup_password')";
+
+        if (mysqli_query($conn, $sql)) {
+            echo "<p><b>WITAJ NOWY FANIE ONE PIECE :)</b></p>";
+        } else {
+            echo "<p>Błąd: " . $sql . "<br>" . mysqli_error($conn) . "</p>";
+        }
+    }
+
+    mysqli_close($conn);
+    ?>
+</body>
+</html>

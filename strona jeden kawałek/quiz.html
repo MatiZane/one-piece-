@@ -1,0 +1,102 @@
+<!DOCTYPE html> 
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz o one piece</title>
+    <link rel="stylesheet" href="css123.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz o One Piece</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Powrót</a></li>
+            <li><a href="diabelskie_owoce.html">Diabelskie Owoce</a></li>
+            <li><a href="postacie.html">Postacie</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+    </nav>
+    
+    <div id="quiz">
+        <img src="Whitebeard_Render.png" alt="Whitebeard_Render" style="float:right; width: 740px;">
+        <form>
+          <div class="question">
+            <p>1. Kto jest głównym bohaterem one piece</p>
+            <input type="radio" name="question1" value="a">Naruto<br>
+            <input type="radio" name="question1" value="b">Luffy<br>
+            <input type="radio" name="question1" value="c">Drift<br>
+            <input type="radio" name="question1" value="d">Krakers
+          <div class="question">
+            <p>2. Jakiej rasy jest king</p>
+            <input type="radio" name="question2" value="a">Lunarian<br>
+            <input type="radio" name="question2" value="b">Elf<br>
+            <input type="radio" name="question2" value="c">Ryba<br>
+            <input type="radio" name="question2" value="d">Biały
+          </div>
+          <div class="question">
+            <p>3. ile jest typów haki</p>
+            <input type="radio" name="question3" value="a">12<br>
+            <input type="radio" name="question3" value="b">25<br>
+            <input type="radio" name="question3" value="c">13<br>
+            <input type="radio" name="question3" value="d">10
+          <div class="question">
+            <p>4. ile lat ma Nami</p>
+            <input type="radio" name="question4" value="a">17<br>
+            <input type="radio" name="question4" value="b">19<br>
+            <input type="radio" name="question4" value="c">20<br>
+            <input type="radio" name="question4" value="d">18
+          </div>
+          <div class="question">
+            <p>5. jak nazywała księzniczka dressrosy</p>
+            <input type="radio" name="question5" value="a">Rebecca<br>
+            <input type="radio" name="question5" value="b">babasta<br>
+            <input type="radio" name="question5" value="c">Viola<br>
+            <input type="radio" name="question5" value="d">Pitagoras
+          <div class="question">
+            <p>6. ile dni luffy juz walczy z kaido</p>
+            <input type="radio" name="question6" value="a">92dni<br>
+            <input type="radio" name="question6" value="b">109dni<br>
+            <input type="radio" name="question6" value="c">120dni<br>
+            <input type="radio" name="question6" value="d">84dni
+          </div>
+          <input type="button" value="Sprawdź odpowiedzi" onclick="checkAnswers()">
+        </form>
+        <div id="results"></div>
+      </div>
+      <script>
+        function checkAnswers() {
+  var question1 = document.querySelector('input[name="question1"]:checked').value;
+  var question2 = document.querySelector('input[name="question2"]:checked').value;
+  var question3 = document.querySelector('input[name="question3"]:checked').value;
+  var question4 = document.querySelector('input[name="question4"]:checked').value;
+  var question5 = document.querySelector('input[name="question5"]:checked').value;
+  var question6 = document.querySelector('input[name="question6"]:checked').value;
+  var correct = 0;
+  if (question1 == "a") {
+    correct++;
+  }
+  if (question2 == "a") {
+    correct++;
+  }
+  if (question3 == "c") {
+    correct++;
+  }
+  if (question4 == "b") {
+    correct++;
+  }
+  if (question5 == "a") {
+    correct++;
+  }
+  if (question6 == "c") {
+    correct++;
+  }
+  var results = document.getElementById("results");
+  results.innerHTML = "Poprawnych odpowiedzi: " + correct + " na 6 możliwe.";
+}
+      </script>
+      
+</body>
+</html>

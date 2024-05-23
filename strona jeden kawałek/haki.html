@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <title>Haki w One Piece</title>
+    <link rel="stylesheet" href="stylehaki.css">
+</head>
+<body>
+    <header>
+        <h1>Haki w One Piece</h1>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="index.html">Powrót</a></li>
+            <li><a href="diabelskie_owoce.html">Diabelskie Owoce</a></li>
+            <li><a href="postacie.html">Postacie</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="haki">
+            <div class="container">
+                <h2>Haki</h2>
+                <p>Tajemnicza siła, którą posiada każde stworzenie na świecie. Nie różni się wiele od zwykłych zmysłów. Większość ludzi jednak jej nie zauważa lub nie udaje 
+                się im jej przebudzić. Są dwa rodzaje dominacji dostępne dla każdego, przebudzane przez odpowiedni trening; jest jednak trzeci typ, który posiąść mogą tylko "wybrańcy".</p>
+                
+                
+                <div id="haki-opis">
+                    <h3>Rodzaje haki:</h3>
+                    <ul>
+                        <li>
+                            Haki Obserwacji (Kenbunshoku Haki)
+                            <br>
+                            <img src="observation.gif" alt="Haki Obserwacji">
+                        </li>
+                        <li>
+                            Haki uzbrojenia (Busoshoku Haki)
+                            <br>
+                            <img src="aramant.gif" alt="Haki Zbroi">
+                        </li>
+                        <li>
+                            Haki Królewskie (Haoshoku Haki)
+                            <br>
+                            <img src="conq.gif" alt="Haki Królewskie">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <div class=>
+        <img src="arlong123.png" alt="arlong" id="arlongin">
+        <img src="don krieg.png" alt="don krieg" id="goldkrieg">
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var navLinks = document.querySelectorAll('nav a');
+
+            navLinks.forEach(function(link) {
+                link.addEventListener('mousedown', function() {
+                    this.classList.add('active');
+                });
+
+                link.addEventListener('mouseup', function() {
+                    this.classList.remove('active');
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

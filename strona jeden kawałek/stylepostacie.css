@@ -1,0 +1,93 @@
+body {
+    background: linear-gradient(90deg, rgba(1,0,36,1) 0%, rgba(0,78,255,1) 49%, rgba(17,17,23,1) 50%,#D1913C 50%, #D1913C 90%, #FFD194 100%);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+h1, h3 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-align: center;
+}
+h2,h3{
+    margin: 0;
+    padding: 0;
+    color: black;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    transition: font-size 0.3s ease, background-color 0.3s ease;
+    font-size: 25px;
+}
+
+nav a:hover {
+    background-color:#D1913C;
+}
+nav a:active {
+    font-size: 35px;
+    background: blue;
+    color: #fff;
+}
+
+main {
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+#zdjecia-postaci {
+    text-align: center;
+}
+
+#zdjecia-postaci p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: "Arial", sans-serif; 
+}
+
+#zdjecia-postaci img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease; 
+
+}
+#zdjecia-postaci img:hover {
+    transform: scale(2); 
+}
+
+
+
